@@ -94,7 +94,7 @@ function OurJourneySection() {
             Our journey so far
           </h2>
           <p className="mx-auto mt-4 max-w-[80ch] text-lg text-ink/75">
-            Elara has always been about giving underrepresented communities a real seat in health data—programs like Genesis and CREATE-X helped us refine how we get there.
+            Elara has always been about giving underrepresented communities a real seat in health data—programs like Genesis helped us refine how we get there.
           </p>
         </header>
 
