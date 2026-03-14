@@ -1,57 +1,24 @@
 # Elara Landing Page
 
-A simple, visual landing page for Elara: clinical trial recruitment and retention at Georgia Tech.
+## Overview
 
-## Run locally
+This repository contains the marketing landing page for **Elara**, a platform focused on **clinical trial recruitment and retention at Georgia Tech**.  
+The page introduces our value proposition, highlights benefits for study teams and participants, and guides visitors toward learning more or getting in touch.
 
-From **this** folder (the one that contains this README and `package.json`):
+### What Elara is
 
-```bash
-npm install
-npm run dev
-```
+Elara is a lightweight, research-focused platform that helps labs and study teams at Georgia Tech:
 
-In the terminal, Vite will print something like:
+- Make trials easier to discover and understand
+- Reach a broader and more representative pool of participants
+- Keep participants engaged and informed throughout the entire study lifecycle
 
-```
-➜  Local:   http://localhost:5173/
-```
+### What we do
 
-**Open that exact URL in your browser:** [http://localhost:5173](http://localhost:5173)
+On the product side, Elara:
 
-## Making sure you're on the right site
+- **Centralizes recruitment**: clear trial summaries, eligibility, and calls-to-action in one place  
+- **Supports retention**: timely updates, reminders, and clear expectations for participants  
+- **Streamlines operations**: simple tools for coordinators to manage outreach and communication
 
-- **Correct project folder:**  
-  `New Elara` (the folder with this README, `src/App.jsx`, and `package.json`).  
-  If you have another folder named "Elara" or "elara" elsewhere, that may be a different project.
-
-- **Correct URL:**  
-  Use **http://localhost:5173** (port **5173**).  
-  If you use a different port (e.g. 3000, 5174), you may be viewing a different app.
-
-- **You should see:**  
-  The hero headline **"Clinical trial recruitment and retention made easy"** and the line **"at Georgia Tech"** under it.  
-  If you still see "Retention first recruitment for underrepresented clinical trial participants", you're on an old build or a different site.
-
-- **Hard refresh:**  
-  **Mac:** `Cmd + Shift + R`  
-  **Windows/Linux:** `Ctrl + Shift + R`  
-  Or open the site in an incognito/private window to avoid cache.
-
-- **Only one dev server:**  
-  If you run `npm run dev` in more than one project, each uses a different port. Close other terminals or stop other servers, then run `npm run dev` only in this **New Elara** folder and use the URL it prints (usually 5173).
-
-## Build
-
-```bash
-npm run build
-```
-
-Output is in `dist/`.
-
-## Stack
-
-- React 18 + Vite
-- Tailwind CSS
-- Lucide React (icons)
-- Nunito (Google Fonts)
+This landing page is designed to clearly communicate that story with a modern, responsive UI.
