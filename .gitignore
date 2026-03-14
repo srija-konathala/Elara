@@ -65,6 +65,15 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 
+# Dependencies
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+*.local
+
+# Env
 # dotenv environment variable files
 .env
 .env.*
@@ -137,3 +146,25 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+*.sublime-*
+
+# Cache
+.cache/
+.parcel-cache/
+.vite/
+
+# Optional
+*.tsbuildinfo

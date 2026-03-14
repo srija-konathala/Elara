@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-cream text-ink antialiased;
+}
+
+/* Subtle sage dot pattern in background */
+.bg-sage-dots {
+  background-image: radial-gradient(circle at 1px 1px, rgb(167 197 142 / 0.2) 1px, transparent 0);
+  background-size: 28px 28px;
+}
