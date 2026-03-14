@@ -22,3 +22,11 @@ On the product side, Elara:
 - **Streamlines operations**: simple tools for coordinators to manage outreach and communication
 
 This landing page is designed to clearly communicate that story with a modern, responsive UI.
+
+## Stack
+
+- React 18 + Vite
+- Tailwind CSS
+- Lucide React (icons)
+- Nunito (Google Fonts)
+
