@@ -293,6 +293,263 @@ function WhyElara() {
   )
 }
 
+function PilotIntelligenceSection() {
+  const phases = [
+    {
+      week: 'W1',
+      step: 'User segmentation',
+      now: 'Manual segments by diagnosis and interview notes.',
+      ai: 'Cluster participants by behavior and discover hidden cohorts.',
+    },
+    {
+      week: 'W2',
+      step: 'Outreach + messaging',
+      now: 'Write and compare variants manually across channels.',
+      ai: 'Generate, auto-tag, and rank message variants by segment.',
+    },
+    {
+      week: 'W3',
+      step: 'Funnel tracking',
+      now: 'Spot drop-off after it already happened.',
+      ai: 'Predict churn risk early and prioritize interventions.',
+    },
+    {
+      week: 'W3-4',
+      step: 'Engagement + retention',
+      now: 'Same follow-up cadence for everyone.',
+      ai: 'Personalize timing and tone, escalate only high-risk cases.',
+    },
+    {
+      week: 'W4',
+      step: 'Interview analysis',
+      now: 'Theme extraction from notes takes days.',
+      ai: 'Extract concerns and trust drivers with frequency signals.',
+    },
+    {
+      week: 'W4',
+      step: 'Final report',
+      now: 'Manual synthesis across channels and outcomes.',
+      ai: 'Auto-generate a consistent pilot report that feeds the next run.',
+    },
+  ]
+
+  return (
+    <section className="bg-cream px-6 py-20">
+      <div className="mx-auto max-w-content">
+        <div className="mx-auto mb-10 max-w-3xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sage-600">
+            AI-powered intelligence
+          </p>
+          <h2 className="mt-2 text-2xl font-bold text-ink md:text-3xl">
+            Every pilot becomes a learning system
+          </h2>
+          <p className="mt-3 text-ink/80">
+            Elara maps automation across recruitment, engagement, and reporting so each pilot gets smarter than the last.
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {phases.map((phase) => (
+            <article
+              key={`${phase.week}-${phase.step}`}
+              className="rounded-3xl border-2 border-sage-200/80 bg-white p-5 shadow-soft"
+            >
+              <div className="mb-3 flex items-center justify-between">
+                <span className="rounded-full bg-sage-100 px-3 py-1 text-xs font-semibold text-sage-700">
+                  {phase.week}
+                </span>
+                <span className="text-xs font-medium uppercase tracking-wide text-ink/55">
+                  {phase.step}
+                </span>
+              </div>
+
+              <div className="space-y-3">
+                <div className="rounded-2xl border border-sage-100 bg-cream/70 p-3">
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-ink/55">
+                    Today
+                  </p>
+                  <p className="mt-1 text-sm text-ink/85">{phase.now}</p>
+                </div>
+                <div className="rounded-2xl border border-sage-200 bg-sage-50/65 p-3">
+                  <p className="text-[11px] font-semibold uppercase tracking-wide text-sage-700">
+                    With AI
+                  </p>
+                  <p className="mt-1 text-sm text-ink/85">{phase.ai}</p>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function AdminDemoSection() {
+  const views = [
+    { id: 'funnel', label: 'Funnel view', icon: BarChart3 },
+    { id: 'steps', label: 'Pilot steps', icon: ClipboardList },
+    { id: 'report', label: 'Final report', icon: FileText },
+  ]
+
+  const [activeView, setActiveView] = useState('funnel')
+  const [activeStep, setActiveStep] = useState(2)
+
+  const funnelStages = [
+    { label: 'Reached', count: 1000 },
+    { label: 'Responded', count: 240 },
+    { label: 'Qualified', count: 120 },
+    { label: 'Enrolled', count: 60 },
+    { label: 'Retained', count: 38 },
+  ]
+
+  const pilotSteps = [
+    { week: 'Week 1', title: 'Segmentation', status: 'complete' },
+    { week: 'Week 2', title: 'Outreach optimization', status: 'complete' },
+    { week: 'Week 3', title: 'Funnel risk detection', status: 'active' },
+    { week: 'Week 3-4', title: 'Retention nudges', status: 'pending' },
+    { week: 'Week 4', title: 'Interview synthesis', status: 'pending' },
+    { week: 'Week 4', title: 'Final report generation', status: 'pending' },
+  ]
+
+  const maxFunnel = funnelStages[0].count
+
+  return (
+    <section className="bg-sage-50/40 px-6 py-20">
+      <div className="mx-auto max-w-content">
+        <div className="mx-auto mb-8 max-w-3xl text-center">
+          <h2 className="text-2xl font-bold text-ink md:text-3xl">Client admin demo</h2>
+          <p className="mt-3 text-ink/80">
+            A quick interactive preview of what clients can see during a pilot: live funnel status, step progress, and final summary outputs.
+          </p>
+        </div>
+
+        <div className="rounded-3xl border-2 border-sage-200/80 bg-white p-5 shadow-soft md:p-6">
+          <div className="mb-6 flex flex-wrap gap-2">
+            {views.map(({ id, label, icon: Icon }) => (
+              <button
+                key={id}
+                type="button"
+                onClick={() => setActiveView(id)}
+                className={[
+                  'inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition',
+                  activeView === id
+                    ? 'border-sage-300 bg-sage-500 text-white shadow-soft'
+                    : 'border-sage-200 bg-sage-50 text-sage-700 hover:bg-sage-100',
+                ].join(' ')}
+              >
+                <Icon className="h-4 w-4" strokeWidth={2} />
+                {label}
+              </button>
+            ))}
+          </div>
+
+          {activeView === 'funnel' && (
+            <div className="grid gap-6 lg:grid-cols-3">
+              <div className="lg:col-span-2 rounded-2xl border border-sage-200 bg-cream/70 p-4">
+                <p className="mb-4 text-sm font-semibold text-ink">Recruitment funnel snapshot</p>
+                <div className="space-y-4">
+                  {funnelStages.map((stage, idx) => {
+                    const pct = (stage.count / maxFunnel) * 100
+                    return (
+                      <div key={stage.label}>
+                        <div className="mb-1 flex items-center justify-between text-sm">
+                          <span className="font-medium text-ink/85">{stage.label}</span>
+                          <span className="font-semibold text-ink">{stage.count}</span>
+                        </div>
+                        <div className="h-2.5 w-full rounded-full bg-sage-100">
+                          <div
+                            className="h-full rounded-full bg-sage-500"
+                            style={{ width: `${pct}%`, opacity: 1 - idx * 0.08 }}
+                          />
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-sage-200 bg-white p-4">
+                <p className="text-sm font-semibold text-ink">Highlights</p>
+                <ul className="mt-3 space-y-2 text-sm text-ink/85">
+                  <li>Top drop-off: between Responded and Qualified</li>
+                  <li>Retention at week 4: 38 participants</li>
+                  <li>Best channel pair: Instagram DM to SMS</li>
+                </ul>
+              </div>
+            </div>
+          )}
+
+          {activeView === 'steps' && (
+            <div className="grid gap-6 lg:grid-cols-3">
+              <div className="lg:col-span-1 rounded-2xl border border-sage-200 bg-white p-4">
+                <p className="mb-3 text-sm font-semibold text-ink">Pilot workflow</p>
+                <div className="space-y-2">
+                  {pilotSteps.map((step, idx) => (
+                    <button
+                      key={`${step.week}-${step.title}`}
+                      type="button"
+                      onClick={() => setActiveStep(idx)}
+                      className={[
+                        'w-full rounded-2xl border px-3 py-2 text-left transition',
+                        activeStep === idx
+                          ? 'border-sage-300 bg-sage-100'
+                          : 'border-sage-200 bg-cream/60 hover:bg-sage-50',
+                      ].join(' ')}
+                    >
+                      <p className="text-xs font-semibold text-sage-700">{step.week}</p>
+                      <p className="text-sm font-medium text-ink">{step.title}</p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="lg:col-span-2 rounded-2xl border border-sage-200 bg-cream/70 p-5">
+                <p className="text-sm font-semibold text-ink">Step details</p>
+                <h3 className="mt-2 text-lg font-bold text-ink">{pilotSteps[activeStep].title}</h3>
+                <p className="mt-1 text-sm text-ink/80">Status: {pilotSteps[activeStep].status}</p>
+                <div className="mt-4 rounded-2xl border border-sage-200 bg-white p-4 text-sm text-ink/85">
+                  {activeStep === 0 && 'Cohort segments are generated from participant intake, interview notes, and symptom signals.'}
+                  {activeStep === 1 && 'Message variants are tested across channels and ranked by conversion quality.'}
+                  {activeStep === 2 && 'Participants with declining engagement are flagged with predicted retention risk scores.'}
+                  {activeStep === 3 && 'The system suggests nudges and escalates only high-risk participants to human operators.'}
+                  {activeStep === 4 && 'Interview transcripts are auto-tagged for concerns, trust drivers, and adoption barriers.'}
+                  {activeStep === 5 && 'All pilot signals compile into a structured output report with recommendations.'}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {activeView === 'report' && (
+            <div className="rounded-2xl border border-sage-200 bg-cream/70 p-5">
+              <div className="rounded-2xl border border-sage-200 bg-white">
+                <div className="border-b border-sage-100 bg-sage-600 px-4 py-3">
+                  <p className="text-sm font-semibold text-white">Elara Pilot Summary - Spring 2025</p>
+                </div>
+                <div className="grid gap-0 md:grid-cols-2">
+                  {[
+                    ['Top segment', 'Chronic pain, app-savvy'],
+                    ['Best channel', 'Instagram DM -> SMS'],
+                    ['Top message', '"Feel heard" (1.8x lift)'],
+                    ['Highest drop-off', 'Day 3 onboarding'],
+                    ['Week 4 retention', '38 / 60 enrolled'],
+                    ['Primary recommendation', 'Send clinician-led explainer by Day 2'],
+                  ].map(([k, v], idx) => (
+                    <div key={k} className={`border-b border-sage-100 px-4 py-3 ${idx % 2 === 0 ? 'md:border-r' : ''}`}>
+                      <p className="text-xs font-semibold uppercase tracking-wide text-ink/55">{k}</p>
+                      <p className="mt-1 text-sm font-medium text-ink">{v}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function FooterCTA({ footerRef }) {
   const [formData, setFormData] = useState({
     name: '',
@@ -435,6 +692,8 @@ export default function App() {
         <HowItWorks howItWorksRef={howItWorksRef} />
         <SocialProof />
         <WhyElara />
+        <PilotIntelligenceSection />
+        <AdminDemoSection />
         <OurJourneySection />
         <FooterCTA footerRef={footerRef} />
       </main>

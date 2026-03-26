@@ -25,7 +25,7 @@ const JOURNEY_PHASES = [
     label: 'Listening and market research',
     heading: 'Listening and market research',
     body: [
-      'As we spoke with researchers, startups, and mentors, we saw the biggest pain wasn\'t just data—it was recruiting and keeping the right people.',
+      'As we spoke with researchers, startups, and mentors, we saw the biggest pain wasn\'t just data, it was recruiting and keeping the right people.',
       'We paused building product and ran structured interviews and literature reviews to understand retention and trust gaps.',
     ],
     icon: MessageCircle,
@@ -94,7 +94,7 @@ function OurJourneySection() {
             Our journey so far
           </h2>
           <p className="mx-auto mt-4 max-w-[80ch] text-lg text-ink/75">
-            Elara has always been about giving underrepresented communities a real seat in health data—programs like Genesis helped us refine how we get there.
+            Elara has always been about giving underrepresented communities a real seat in health data, programs like Genesis and CREATE-X helped us refine how we get there.
           </p>
         </header>
 
