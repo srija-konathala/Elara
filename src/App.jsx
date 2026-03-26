@@ -18,6 +18,8 @@ const SECTION_IDS = {
   researchers: 'for-researchers',
   startups: 'for-startups',
   howItWorks: 'how-it-works',
+  automation: 'automation',
+  demo: 'demo',
   ourJourney: 'our-journey',
   footer: 'footer-cta',
 }
@@ -57,13 +59,6 @@ function Nav({ footerRef }) {
         <div className="hidden items-center gap-8 md:flex">
           <button
             type="button"
-            onClick={() => scrollTo(SECTION_IDS.ourJourney)}
-            className="rounded-2xl border-2 border-sage-300 bg-sage-50 px-4 py-2 text-sm font-semibold text-sage-700 shadow-soft transition hover:bg-sage-100 hover:border-sage-400"
-          >
-            Our journey
-          </button>
-          <button
-            type="button"
             onClick={() => scrollTo(SECTION_IDS.researchers)}
             className="text-sm font-medium text-ink/90 hover:text-sage-600"
           >
@@ -75,6 +70,27 @@ function Nav({ footerRef }) {
             className="text-sm font-medium text-ink/90 hover:text-sage-600"
           >
             For health startups
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollTo(SECTION_IDS.automation)}
+            className="text-sm font-medium text-ink/90 hover:text-sage-600"
+          >
+            Automation
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollTo(SECTION_IDS.demo)}
+            className="text-sm font-medium text-ink/90 hover:text-sage-600"
+          >
+            Demo
+          </button>
+          <button
+            type="button"
+            onClick={() => scrollTo(SECTION_IDS.ourJourney)}
+            className="rounded-2xl border-2 border-sage-300 bg-sage-50 px-4 py-2 text-sm font-semibold text-sage-700 shadow-soft transition hover:bg-sage-100 hover:border-sage-400"
+          >
+            Our journey
           </button>
           <button
             type="button"
@@ -97,14 +113,20 @@ function Nav({ footerRef }) {
           </button>
           {mobileOpen && (
             <div className="absolute right-6 top-16 flex w-52 flex-col gap-1 rounded-3xl border border-sage-200 bg-white p-3 shadow-soft-lg">
-              <button type="button" onClick={() => scrollTo(SECTION_IDS.ourJourney)} className="rounded-2xl border-2 border-sage-200 bg-sage-50 py-2.5 pl-3 text-left text-sm font-semibold text-sage-700 hover:bg-sage-100">
-                Our journey
-              </button>
               <button type="button" onClick={() => scrollTo(SECTION_IDS.researchers)} className="rounded-2xl py-2.5 pl-3 text-left text-sm font-medium text-ink hover:bg-sage-50">
                 For researchers
               </button>
               <button type="button" onClick={() => scrollTo(SECTION_IDS.startups)} className="rounded-2xl py-2.5 pl-3 text-left text-sm font-medium text-ink hover:bg-sage-50">
                 For health startups
+              </button>
+              <button type="button" onClick={() => scrollTo(SECTION_IDS.automation)} className="rounded-2xl py-2.5 pl-3 text-left text-sm font-medium text-ink hover:bg-sage-50">
+                Automation
+              </button>
+              <button type="button" onClick={() => scrollTo(SECTION_IDS.demo)} className="rounded-2xl py-2.5 pl-3 text-left text-sm font-medium text-ink hover:bg-sage-50">
+                Demo
+              </button>
+              <button type="button" onClick={() => scrollTo(SECTION_IDS.ourJourney)} className="rounded-2xl border-2 border-sage-200 bg-sage-50 py-2.5 pl-3 text-left text-sm font-semibold text-sage-700 hover:bg-sage-100">
+                Our journey
               </button>
               <button type="button" onClick={() => scrollTo(SECTION_IDS.footer)} className="rounded-full bg-sage-500 py-2.5 text-sm font-semibold text-white">
                 Talk to us
@@ -334,7 +356,7 @@ function PilotIntelligenceSection() {
   ]
 
   return (
-    <section className="bg-cream px-6 py-20">
+    <section id="automation" className="scroll-mt-20 bg-cream px-6 py-20">
       <div className="mx-auto max-w-content">
         <div className="mx-auto mb-10 max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-sage-600">
@@ -415,7 +437,7 @@ function AdminDemoSection() {
   const maxFunnel = funnelStages[0].count
 
   return (
-    <section className="bg-sage-50/40 px-6 py-20">
+    <section id="demo" className="scroll-mt-20 bg-sage-50/40 px-6 py-20">
       <div className="mx-auto max-w-content">
         <div className="mx-auto mb-8 max-w-3xl text-center">
           <h2 className="text-2xl font-bold text-ink md:text-3xl">Client admin demo</h2>
